@@ -56,11 +56,3 @@ main h1 {
 .simulado-card button:hover {
   background: #125aa0;
 }
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  background: #eaeaea;
-  color: #666;
-}

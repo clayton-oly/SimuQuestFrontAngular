@@ -17,19 +17,30 @@
 
 
 <div class="simulado-container">
-  <!-- <h1>{{ simulado.nome }}</h1> -->
-
-  <div class="questao-card" *ngFor="let q of questions; let i = index">
-    <h2>Questão {{ i + 1 }}</h2>
-    <p class="texto">{{ q.texto }}</p>
+  <div class="questao-card">
+    <div>⏰: {{ formatarTempo(tempoRestante) }}</div>
+    <!-- <h1>{{ simulado.nome }}</h1> -->
+    <!-- <div class="questao-card" *ngFor="let q of questions; let i = index"> -->
+    <!-- <h2>Questão {{ i + 1 }}</h2>
+    <p class="texto">{{ q.texto }}</p> -->
+    <h2>Questão {{ currentIndex + 1 }}</h2>
+    <p class="texto">{{ questions[currentIndex].texto }}</p>
 
     <div class="opcoes">
-      <label *ngFor="let opcao of q.options">
-        <input type="radio" name="questao{{i}}">
-        {{opcao.texto}}
+      <label *ngFor="let opcao of questions[currentIndex].options">
+        <input type="radio" name="questao{{currentIndex}}">
+        {{ opcao.texto }}
       </label>
     </div>
   </div>
 
-  <button class="btn-finalizar">Finalizar</button>
+  <div class="navegacao">
+    <button (click)="anterior()" [disabled]="currentIndex === 0">Anterior</button>
+    <button (click)="proxima()" [disabled]="currentIndex === questions.length - 1">Próxima</button>
+  </div>
+
+  <button class="btn-finalizar" *ngIf="currentIndex === questions.length - 1">
+    Finalizar
+  </button>
+  <!-- <button class="btn-finalizar">Finalizar</button> -->
 </div>
