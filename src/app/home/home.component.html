@@ -1,0 +1,17 @@
+<main>
+  <h1>Escolha um Simulado</h1>
+
+  <div class="simulados-grid">
+  <div class="simulado-card" *ngFor="let exam of simulados">
+    <h2>{{ exam.nome }}</h2>
+    <p>{{ exam.descricao }}</p>
+    <button (click)="iniciar(exam.id)">Iniciar</button>
+  </div>
+</div>
+</main>
+
+
+
+<footer>
+  <p>© 2025 Simulados App</p>
+</footer>
