@@ -1,0 +1,35 @@
+<!-- Placar visual -->
+<div class="placar" *ngIf="resultadoDetalhado.length">
+  <span *ngFor="let q of resultadoDetalhado">
+    <span [ngClass]="{ 'acerto': isAcertou(q), 'erro': !isAcertou(q) }">
+      {{ isAcertou(q) ? '✅' : '❌' }}
+    </span>
+  </span>
+</div>
+
+<div class="simulado-container" *ngIf="resultadoDetalhado?.length">
+
+  <div class="questao-card" *ngFor="let q of resultadoDetalhado; let i = index">
+    <h2>Questão {{ i + 1 }}</h2>
+    <p class="texto">{{ q.pergunta }}</p>
+
+    <div class="opcoes">
+      <label *ngFor="let o of q.options"
+             [ngClass]="{
+               'correta': o.correta,
+               'selecionada-errada': o.selecionada && !o.correta
+             }">
+        <input type="radio" [checked]="o.selecionada" disabled>
+        {{ o.texto }}
+        <span *ngIf="o.selecionada">
+          {{ o.correta ? '✔️' : '❌' }}
+        </span>
+        <span *ngIf="!o.selecionada && o.correta">✔️</span>
+      </label>
+    </div>
+
+    <p class="explicacao"><strong>Explicação:</strong> {{ q.explicacao }}</p>
+  </div>
+</div>
+
+<button routerLink="/" class="btn-voltar">Voltar para Home</button>

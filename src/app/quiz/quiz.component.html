@@ -1,46 +1,29 @@
-<!-- <div class="container mt-4">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">{{ questionText }}</h5>
+<div class="simulado-container" *ngIf="questions?.length">
 
-            <ul class="list-group list-group-flush mt-3">
-                
-                <li class="list-group-item" *ngFor="let option of options" style="cursor: pointer;"
-                    (click)="selectOption(option)">
-                    {{ option }}
-                    <input type="radio">
-                </li>
-            </ul>
-        </div>
-    </div>
-</div> -->
+  <!-- Timer -->
+  <div class="timer">⏰ {{ formatarTempo(tempoRestante) }}</div>
 
-
-<div class="simulado-container">
+  <!-- Pergunta atual -->
   <div class="questao-card">
-    <div>⏰: {{ formatarTempo(tempoRestante) }}</div>
-    <!-- <h1>{{ simulado.nome }}</h1> -->
-    <!-- <div class="questao-card" *ngFor="let q of questions; let i = index"> -->
-    <!-- <h2>Questão {{ i + 1 }}</h2>
-    <p class="texto">{{ q.texto }}</p> -->
     <h2>Questão {{ currentIndex + 1 }}</h2>
-    <p class="texto">{{ questions[currentIndex].texto }}</p>
+    <p class="texto">{{ perguntaAtual.texto }}</p>
 
+    <!-- Opções -->
     <div class="opcoes">
-      <label *ngFor="let opcao of questions[currentIndex].options">
-        <input type="radio" name="questao{{currentIndex}}">
+      <label *ngFor="let opcao of perguntaAtual.options">
+        <input type="radio" name="questao{{currentIndex}}" (click)="marcarOpcao(perguntaAtual.id, opcao.id)"
+          [checked]="opcao.id === opcaoSelecionadaAtual">
         {{ opcao.texto }}
       </label>
     </div>
   </div>
 
+  <!-- Navegação -->
   <div class="navegacao">
     <button (click)="anterior()" [disabled]="currentIndex === 0">Anterior</button>
     <button (click)="proxima()" [disabled]="currentIndex === questions.length - 1">Próxima</button>
   </div>
 
-  <button class="btn-finalizar" *ngIf="currentIndex === questions.length - 1">
-    Finalizar
-  </button>
-  <!-- <button class="btn-finalizar">Finalizar</button> -->
+  <!-- Botão Finalizar -->
+  <button (click)="finalizar()" class="btn-finalizar" *ngIf="currentIndex === questions.length - 1">Finalizar</button>
 </div>

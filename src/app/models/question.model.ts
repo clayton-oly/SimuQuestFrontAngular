@@ -1,7 +1,8 @@
-import { Optiona } from "./option.model";
+import { Option } from "./option.model";
 
 export interface Question {
   id: number;
   texto: string;
-  options: Optiona[];
+  explicacao: string;
+  options: Option[];
 }
