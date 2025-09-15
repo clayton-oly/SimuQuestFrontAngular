@@ -1,7 +1,5 @@
-import { Option } from "./option.model";
-
-export interface QuestaoResultado {
-  pergunta: string;
-  options: Option[];
-  explicacao: string;
+export interface SimulatedResult {
+  simulatedExamId: number;
+  pontuacao: number;
+  dataConclusao: string;
 }

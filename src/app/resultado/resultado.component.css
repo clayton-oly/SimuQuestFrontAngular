@@ -1,66 +1,15 @@
-/* Placar de ícones */
-.placar {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
-  font-size: 20px;
-}
-
-.placar .acerto {
-  color: #28a745; /* verde */
-}
-
-.placar .erro {
-  color: #dc3545; /* vermelho */
-}
-
-/* Cartões de questão */
-.questao-card {
-  margin-bottom: 20px;
-  padding: 16px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-}
-
-/* Opções */
-.opcoes label {
-  display: block;
-  padding: 8px;
-  margin: 4px 0;
-  border-radius: 4px;
-  cursor: default;
-  position: relative;
-}
-
 .opcoes label.correta {
-  background-color: #d4edda; /* verde claro */
-  border: 1px solid #28a745;
+  border-color: #28a745;
+  background: #e6f9ec;
 }
 
 .opcoes label.selecionada-errada {
-  background-color: #f8d7da; /* vermelho claro */
-  border: 1px solid #dc3545;
+  border-color: #dc3545;
+  background: #fdeaea;
 }
 
-.opcoes span {
-  margin-left: 8px;
-  font-weight: bold;
-}
-
-/* Explicação */
 .explicacao {
-  margin-top: 8px;
+  margin-top: 10px;
   font-style: italic;
   color: #555;
-}
-
-/* Botão voltar */
-.btn-voltar {
-  margin-top: 16px;
-  padding: 8px 16px;
-  border: none;
-  background-color: #0d6efd;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
 }

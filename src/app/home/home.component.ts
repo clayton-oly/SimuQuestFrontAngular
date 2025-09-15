@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router'; // caso queira links
 import { SimuladoService } from '../core/services/simulado.service';
-import { Simulado } from '../models/simulado.model';
-import { QuizComponent } from "../quiz/quiz.component";
 import { Router } from '@angular/router';
+import { SimulatedExam } from '../models/simulado.model';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +13,7 @@ import { Router } from '@angular/router';
 })
 
 export class HomeComponent {
-  simulados: Simulado[] = [];
+  simulados: SimulatedExam[] = [];
 
   ngOnInit(): void {
     this.loadQuestions();

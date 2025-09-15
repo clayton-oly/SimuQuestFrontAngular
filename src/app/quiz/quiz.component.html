@@ -11,8 +11,12 @@
     <!-- Opções -->
     <div class="opcoes">
       <label *ngFor="let opcao of perguntaAtual.options">
-        <input type="radio" name="questao{{currentIndex}}" (click)="marcarOpcao(perguntaAtual.id, opcao.id)"
-          [checked]="opcao.id === opcaoSelecionadaAtual">
+        <input
+          type="radio"
+          name="questao{{ currentIndex }}"
+          [checked]="opcao.id === opcaoSelecionadaAtual"
+          (change)="marcarOpcao(perguntaAtual.id, opcao.id)"
+        >
         {{ opcao.texto }}
       </label>
     </div>
@@ -25,5 +29,10 @@
   </div>
 
   <!-- Botão Finalizar -->
-  <button (click)="finalizar()" class="btn-finalizar" *ngIf="currentIndex === questions.length - 1">Finalizar</button>
+  <button
+    (click)="finalizar()"
+    class="btn-finalizar"
+    *ngIf="currentIndex === questions.length - 1">
+    Finalizar
+  </button>
 </div>

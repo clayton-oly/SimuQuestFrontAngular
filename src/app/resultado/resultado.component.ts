@@ -1,7 +1,5 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { QuestaoResultado } from '../models/resultado.mode';
 
 @Component({
   selector: 'app-resultado',
@@ -11,21 +9,16 @@ import { QuestaoResultado } from '../models/resultado.mode';
 })
 
 export class ResultadoComponent implements OnInit {
-
-  resultadoDetalhado: QuestaoResultado[] = [];
-
-  constructor(private router: Router) { }
+  resultadoDetalhado: any[] = [];
 
   ngOnInit(): void {
-    const navigation = this.router.getCurrentNavigation();
-    const state = navigation?.extras?.state as { resultadoDetalhado: any[] };
-    this.resultadoDetalhado = state?.resultadoDetalhado ?? [];
-    console.log(history.state.resultadoDetalhado)
-  }
+    const salvo = localStorage.getItem('resultadoDetalhado');
+    this.resultadoDetalhado = salvo ? JSON.parse(salvo) : [];
 
-  // Função para saber se a questão foi acertada
-  isAcertou(q: QuestaoResultado): boolean {
-    return q.options.some(o => o.selecionada && o.correta);
-  }
+    // Limpa logo após carregar
+    localStorage.removeItem('resultadoDetalhado');
 
+    console.log('Resultado recebido:', this.resultadoDetalhado);
+  }
 }
+

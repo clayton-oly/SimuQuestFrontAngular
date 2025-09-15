@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Simulado } from '../../models/simulado.model';
+import { SimulatedExam } from '../../models/simulado.model';
 
 @Injectable({ providedIn: 'root' })
 export class SimuladoService {
@@ -9,8 +9,8 @@ export class SimuladoService {
 
   constructor(private http: HttpClient) { }
 
-  getSimulado(): Observable<Simulado[]> {
-    return this.http.get<Simulado[]>(`${this.apiUrl}/SimulatedExam`);
+  getSimulado(): Observable<SimulatedExam[]> {
+    return this.http.get<SimulatedExam[]>(`${this.apiUrl}/SimulatedExam`);
   }
 
   getSimuladoById(id: number) {

@@ -36,29 +36,10 @@ export class QuizComponent implements OnInit {
     });
   }
 
-  marcarOpcao(perguntaId: number, opcaoId: number) {
-    const existente = this.respostasSelecionadas.find(r => r.perguntaId === perguntaId);
-
-    if (existente) {
-      existente.opcaoId = opcaoId;
-    } else {
-      this.respostasSelecionadas.push({ perguntaId, opcaoId });
-    }
-  }
-
-  get opcaoSelecionadaAtual() {
-    const perguntaId = this.perguntaAtual.id;
-    return this.respostasSelecionadas.find(r => r.perguntaId === perguntaId)?.opcaoId;
-  }
-
-  get perguntaAtual() {
-    return this.questions[this.currentIndex];
-  }
-
   formatarTempo(segundos: number): string {
     const min = Math.floor(segundos / 60);
     const seg = segundos % 60;
-    // Adiciona zero à esquerda se for < 10
+
     return `${min.toString().padStart(2, '0')}:${seg.toString().padStart(2, '0')}`;
   }
 
@@ -85,26 +66,41 @@ export class QuizComponent implements OnInit {
   }
 
 
-  resultado: { pergunta: string, correta: boolean, explicacao: string, opcaoMarcada: string, opcaoCorreta: string }[] = [];
-  acertos = 0;
-  finalizado = false;
+  marcarOpcao(perguntaId: number, opcaoId: number) {
+    const existente = this.respostasSelecionadas.find(r => r.perguntaId === perguntaId);
 
+    if (existente) {
+      existente.opcaoId = opcaoId;
+    } else {
+      this.respostasSelecionadas.push({ perguntaId, opcaoId });
+    }
+  }
+
+  get opcaoSelecionadaAtual() {
+    const perguntaId = this.perguntaAtual.id;
+    return this.respostasSelecionadas.find(r => r.perguntaId === perguntaId)?.opcaoId;
+  }
+
+  get perguntaAtual() {
+    return this.questions[this.currentIndex];
+  }
 
   finalizar() {
-    const resultadoDetalhado = this.respostasSelecionadas.map(r => {
-      const pergunta = this.questions.find(q => q.id === r.perguntaId);
-      const opcaoCorreta = pergunta?.options.find(o => o.correta);
+    const resultadoDetalhado = this.questions.map(q => ({
+      pergunta: q.texto,
+      explicacao: q.explicacao ?? '',
+      options: q.options.map(o => ({
+        id: o.id,
+        texto: o.texto,
+        correta: o.correta,
+        selecionada: this.respostasSelecionadas.some(r => r.perguntaId === q.id && r.opcaoId === o.id)
+      }))
+    }));
 
-      return {
-        pergunta: pergunta?.texto ?? '',
-        correta: opcaoCorreta?.id === r.opcaoId,
-        explicacao: pergunta?.explicacao ?? '',
-        opcaoMarcada: pergunta?.options.find(o => o.id === r.opcaoId)?.texto ?? '',
-        opcaoCorreta: opcaoCorreta?.texto ?? ''
-      };
-    });
+    // Salva no localStorage
+    localStorage.setItem('resultadoDetalhado', JSON.stringify(resultadoDetalhado));
 
-    // Navega para a tela de resultado passando os dados via state
-    this.router.navigate(['/resultado'], { state: { resultadoDetalhado } });
+    // Navega para tela de resultado
+    this.router.navigate(['/resultado']);
   }
 }
