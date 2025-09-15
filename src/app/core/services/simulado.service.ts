@@ -13,7 +13,7 @@ export class SimuladoService {
     return this.http.get<SimulatedExam[]>(`${this.apiUrl}/SimulatedExam`);
   }
 
-  getSimuladoById(id: number) {
-    return this.http.get(`https://localhost:7140/api/SimulatedExam/${id}`);
-  }
+  // getSimuladoById(id: number) {
+  //   return this.http.get(`https://localhost:7140/api/SimulatedExam/${id}`);
+  // }
 }

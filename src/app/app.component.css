@@ -1,0 +1,9 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ocupa a tela inteira */
+}
+
+.conteudo {
+  flex: 1; /* empurra o footer para o final da tela */
+}

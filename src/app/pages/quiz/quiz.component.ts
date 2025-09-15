@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Question } from '../models/question.model';
-import { QuizService } from '../core/services/quiz.service';
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { QuizService } from '../../core/services/quiz.service';
+import { Question } from '../../models/question.model';
 
 @Component({
   selector: 'app-quiz',
@@ -27,7 +27,7 @@ export class QuizComponent implements OnInit {
   }
 
   loadQuestions() {
-    this.quizService.getQuestions().subscribe({
+    this.quizService.getQuestionsByExamId(23).subscribe({
       next: (data) => {
         console.log('Dados recebidos da API:', data); // 🔹 aqui você vê no console
         this.questions = data;

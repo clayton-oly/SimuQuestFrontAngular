@@ -4,4 +4,6 @@ footer {
   margin-top: 2rem;
   background: #eaeaea;
   color: #666;
+  display: flex;
+  justify-content: center;
 }

@@ -1,0 +1,35 @@
+<div class="simulado-container" *ngIf="questions?.length">
+
+  <!-- Pergunta atual -->
+  <div class="questao-card">
+
+    <!-- Timer -->
+    <div class="timer">⏰ {{ formatarTempo(tempoRestante) }}
+      <p>pergunta {{currentIndex + 1}} de {{questions.length}}</p>
+    </div>
+
+    <h2 class="texto">{{ currentIndex + 1 }}. {{ perguntaAtual.texto }}</h2>
+
+    <!-- Opções -->
+    <div class="opcoes">
+      <label *ngFor="let opcao of perguntaAtual.options">
+        <input type="radio" name="questao{{ currentIndex }}" [checked]="opcao.id === opcaoSelecionadaAtual"
+          (change)="marcarOpcao(perguntaAtual.id, opcao.id)">
+        {{ opcao.texto }}
+      </label>
+    </div>
+
+    <!-- Navegação -->
+    <div class="navegacao">
+      <button (click)="anterior()" [disabled]="currentIndex === 0">Anterior</button>
+      <button (click)="proxima()" [disabled]="currentIndex === questions.length - 1">Próxima</button>
+    </div>
+
+    <!-- Botão Finalizar -->
+    <button (click)="finalizar()" class="btn-finalizar" *ngIf="currentIndex === questions.length - 1">
+      Finalizar
+    </button>
+
+  </div>
+
+</div>

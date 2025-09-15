@@ -13,7 +13,8 @@ export class QuizService {
     return this.http.get<Question[]>(`${this.apiUrl}/Question`);
   }
 
-  getSimuladoById(id: number) {
-    return this.http.get(`https://localhost:7140/api/SimulatedExam/${id}`);
+  getQuestionsByExamId(id: number):Observable<Question[]> {
+    return this.http.get<Question[]>(`${this.apiUrl}/SimulatedExam/${id}/questoes-aleatorias?quantidade=1`);
   }
+
 }

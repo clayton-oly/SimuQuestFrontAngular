@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router'; // caso queira links
-import { SimuladoService } from '../core/services/simulado.service';
 import { Router } from '@angular/router';
-import { SimulatedExam } from '../models/simulado.model';
+import { SimuladoService } from '../../core/services/simulado.service';
+import { SimulatedExam } from '../../models/simulado.model';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +16,7 @@ export class HomeComponent {
   simulados: SimulatedExam[] = [];
 
   ngOnInit(): void {
-    this.loadQuestions();
+    this.loadExams();
   }
 
 
@@ -31,13 +31,13 @@ export class HomeComponent {
     this.router.navigate(['/simulado', id])
   }
 
-  loadQuestions() {
+  loadExams() {
     this.simuladoService.getSimulado().subscribe({
       next: (data) => {
-        console.log('Dados recebidos da API:', data); // 🔹 aqui você vê no console
+        console.log('Dados recebidos da API:', data);
         this.simulados = data;
       },
-      error: (err) => console.error('Erro ao carregar questões:', err)
+      error: (err) => console.error('Erro ao carregar os simulados:', err)
     });
   }
 }
