@@ -14,7 +14,7 @@ export class QuizService {
   }
 
   getQuestionsByExamId(id: number):Observable<Question[]> {
-    return this.http.get<Question[]>(`${this.apiUrl}/SimulatedExam/${id}/questoes-aleatorias?quantidade=1`);
+    return this.http.get<Question[]>(`${this.apiUrl}/SimulatedExam/${id}/questoes-aleatorias?quantidade=65`);
   }
 
 }

@@ -1,3 +1,5 @@
+<h1 class="resultado">{{total}}: {{resul.toFixed(1)}}%</h1>
+
 <div class="simulado-container" *ngIf="resultadoDetalhado.length">
 
   <div class="questao-card" *ngFor="let q of resultadoDetalhado; let i = index">
@@ -10,7 +12,7 @@
                'correta': o.correta,
                'selecionada-errada': o.selecionada && !o.correta
              }">
-        <input type="radio" [checked]="o.selecionada" disabled>
+        <input class="radioBtn" type="radio" [checked]="o.selecionada" disabled>
         {{ o.texto }}
         <span *ngIf="o.selecionada">
           {{ o.correta ? '✔️' : '❌' }}

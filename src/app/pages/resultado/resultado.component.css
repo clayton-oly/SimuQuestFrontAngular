@@ -1,15 +1,76 @@
+:root{
+  --clr-ruby:#cf0638;
+  --clr-coral:#fa6632;
+  --clr-sun:#fecd23;
+  --clr-jade:#0a996f;
+  --clr-navy:#0a6789;
+  --clr-snow:#ffffff;
+  --clr-smoke:#475d65;
+  --clr-ebony:#001c26;
+  --clr-onyx:#000000;
+}
+
+
+.resultado{
+  display: flex;
+  justify-content: center;
+  margin:2rem;
+  font-size: 2.5rem;
+}
+
+.questao-card{
+  margin-left: 2rem;
+  
+  & h2{
+    padding: 1em 1em 1em 0;
+      color: var(--clr-navy);
+  }
+}
+
 .opcoes label.correta {
-  border-color: #28a745;
+  border-color: (--clr-jade);
   background: #e6f9ec;
+  font-size: 1rem;
 }
 
 .opcoes label.selecionada-errada {
   border-color: #dc3545;
   background: #fdeaea;
+  font-size: 1rem;
 }
 
 .explicacao {
-  margin-top: 10px;
+  margin-top: 2rem;
   font-style: italic;
-  color: #555;
+  color: var(--clr-smoke);
+  font-size: 1rem;
+}
+
+.opcoes {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: var(--clr-ebony);
+  gap: 0.5rem;
+  margin-left: 2rem;
+
+}
+
+.btn-finalizar {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: var(--clr-ebony);
+  gap: 0.5rem;
+  margin-left: 2rem;
+  padding: 1rem;
+
+}
+
+input[type=radio]{
+  color: red;
+  background: #dc3545;
+  font-size: 2rem;
 }

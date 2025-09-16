@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { QuizService } from '../../core/services/quiz.service';
 import { Question } from '../../models/question.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-quiz',
@@ -14,22 +15,25 @@ import { Question } from '../../models/question.model';
 
 export class QuizComponent implements OnInit {
 
-  constructor(private quizService: QuizService, private router: Router) { }
+  constructor(private quizService: QuizService, private router: Router, private route: ActivatedRoute) { }
 
+  idSimulado: number = 0;
   currentIndex = 0;
   tempoRestante = 3600;
   questions: Question[] = [];
   respostasSelecionadas: { perguntaId: number, opcaoId: number }[] = [];
 
   ngOnInit(): void {
-    this.loadQuestions();
+    this.idSimulado = this.route.snapshot.params["id"]
+    console.log(this.idSimulado)
+    this.loadQuestions(this.idSimulado);
     this.diminuirSegundo()
   }
 
-  loadQuestions() {
-    this.quizService.getQuestionsByExamId(23).subscribe({
+  loadQuestions(id: number) {
+    this.quizService.getQuestionsByExamId(id).subscribe({
       next: (data) => {
-        console.log('Dados recebidos da API:', data); // 🔹 aqui você vê no console
+        console.log('Dados recebidos da API:', data);
         this.questions = data;
       },
       error: (err) => console.error('Erro ao carregar questões:', err)
