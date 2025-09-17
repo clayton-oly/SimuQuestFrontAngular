@@ -1,9 +1,10 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-resultado',
-  imports: [NgFor, NgIf, NgClass],
+  imports: [NgFor, NgIf, NgClass, RouterModule ],
   templateUrl: './resultado.component.html',
   styleUrl: './resultado.component.css'
 })

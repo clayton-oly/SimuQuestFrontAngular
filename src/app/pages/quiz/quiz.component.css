@@ -36,3 +36,21 @@
   font-size: 16px;
   cursor: pointer;
 }
+
+#navegacao {
+  display: flex ;
+  justify-content: flex-end;
+}
+
+.navegacao {
+  display: flex ;
+  width: 20%;
+  padding: 15px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+

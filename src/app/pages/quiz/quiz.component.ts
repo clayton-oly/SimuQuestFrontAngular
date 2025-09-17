@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, getNgModuleById, OnInit } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -57,10 +57,6 @@ export class QuizComponent implements OnInit {
     if (this.currentIndex < this.questions.length - 1) {
       this.currentIndex++;
     }
-
-    this.respostasSelecionadas.forEach(element => {
-      console.log(element);
-    });
   }
 
   anterior() {

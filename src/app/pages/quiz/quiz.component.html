@@ -11,7 +11,7 @@
     <h2 class="texto">{{ currentIndex + 1 }}. {{ perguntaAtual.texto }}</h2>
 
     <!-- Opções -->
-    <div class="opcoes">
+    <div class="opcoes"> 
       <label *ngFor="let opcao of perguntaAtual.options">
         <input type="radio" name="questao{{ currentIndex }}" [checked]="opcao.id === opcaoSelecionadaAtual"
           (change)="marcarOpcao(perguntaAtual.id, opcao.id)">
@@ -20,9 +20,9 @@
     </div>
 
     <!-- Navegação -->
-    <div class="navegacao">
-      <button (click)="anterior()" [disabled]="currentIndex === 0">Anterior</button>
-      <button (click)="proxima()" [disabled]="currentIndex === questions.length - 1">Próxima</button>
+    <div id="navegacao">
+      <button class="navegacao" (click)="anterior()" [disabled]="currentIndex === 0">Anterior</button>
+      <button  class="navegacao" (click)="proxima()" [disabled]="currentIndex === questions.length - 1">Próxima</button>
     </div>
 
     <!-- Botão Finalizar -->
