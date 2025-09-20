@@ -2,8 +2,9 @@
 
 <div class="simulado-container" *ngIf="resultadoDetalhado.length">
 
+  <div class="questao-container">
   <div class="questao-card" *ngFor="let q of resultadoDetalhado; let i = index">
-    <h2>Questão {{ i + 1 }}</h2>
+    <p class="questao">Questão {{ i + 1 }}</p>
     <p class="texto">{{ q.pergunta }}</p>
 
     <div class="opcoes">
@@ -23,9 +24,14 @@
 
     <p class="explicacao"><strong>Explicação:</strong> {{ q.explicacao }}</p>
   </div>
-
-  <button routerLink="/" class="btn-finalizar">Voltar para Home</button>
+</div>
   
+
+
+</div>
+<div class="btn-finalizar">
+  <button routerLink="/" class="btn-final">Voltar para Home</button>
+
 </div>
 
 
