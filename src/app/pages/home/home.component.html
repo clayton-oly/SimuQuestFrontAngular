@@ -4,6 +4,7 @@
   <div class="simulados-grid">
   <div class="simulado-card" *ngFor="let exam of simulados">
     <h2>{{ exam.nome }}</h2>
+    <img src="{{exam.imagem}}" alt="Imagem dinâmica" width="150">
     <p>{{ exam.descricao }}</p>
     <button (click)="iniciar(exam.id)">Iniciar</button>
   </div>
