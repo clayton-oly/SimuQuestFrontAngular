@@ -68,3 +68,10 @@ main h1 {
 .simulado-card button:hover {
   background: var(--clr-navy);
 }
+
+.central{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  gap: 100px;
+}

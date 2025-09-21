@@ -13,16 +13,18 @@
     <!-- Opções -->
     <div class="opcoes"> 
       <label *ngFor="let opcao of perguntaAtual.options">
-        <input type="radio" name="questao{{ currentIndex }}" [checked]="opcao.id === opcaoSelecionadaAtual"
+        <input type="radio"name="questao{{ currentIndex }}" [checked]="opcao.id === opcaoSelecionadaAtual"
           (change)="marcarOpcao(perguntaAtual.id, opcao.id)">
         {{ opcao.texto }}
       </label>
     </div>
 
+    <strong [hidden]="selectOptionObrigatorio">Selecione pelo menos uma opcao</strong>
+
     <!-- Navegação -->
     <div id="navegacao">
-      <button class="navegacao" (click)="anterior()" [disabled]="currentIndex === 0">Anterior</button>
-      <button  class="navegacao" (click)="proxima()" [disabled]="currentIndex === questions.length - 1">Próxima</button>
+      <button class="navegacao" (click)="anterior()" [disabled]="currentIndex === 0" >Anterior</button>
+      <button  class="navegacao" (click)="proxima()" [disabled]="currentIndex === questions.length - 1" >Próxima</button>
     </div>
 
     <!-- Botão Finalizar -->

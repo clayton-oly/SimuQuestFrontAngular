@@ -1,15 +1,37 @@
 <main>
+
+  <h1>Bem-vindo(a) ao SimuQuest</h1>
+
+  <div class="central">
+    <ul>
+      <li>
+        <p>Se prepare, revise e pratique com nossos materiais. Aqui </p>
+      </li>
+      <li>
+        <p>você encontra simulados, exercícios e provas para reforçar</p>
+      </li>
+      <li>
+        <p>seus estudos.</p>
+      </li>
+    </ul>
+
+
+
+
+
+    <img src="assets/imgs/simulado.png" alt="Simulado" width="300px">
+  </div>
+
+
+
   <h1>Escolha um Simulado</h1>
 
   <div class="simulados-grid">
-  <div class="simulado-card" *ngFor="let exam of simulados">
-    <h2>{{ exam.nome }}</h2>
-    <img src="{{exam.imagem}}" alt="Imagem dinâmica" width="150">
-    <p>{{ exam.descricao }}</p>
-    <button (click)="iniciar(exam.id)">Iniciar</button>
+    <div class="simulado-card" *ngFor="let exam of simulados">
+      <h2>{{ exam.nome }}</h2>
+      <img src="{{exam.imagem}}" alt="Imagem dinâmica" width="150">
+      <p>{{ exam.descricao }}</p>
+      <button (click)="iniciar(exam.id)">Iniciar</button>
+    </div>
   </div>
-</div>
 </main>
-
-
-

@@ -1,14 +1,14 @@
-import { Component, getNgModuleById, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { QuizService } from '../../core/services/quiz.service';
 import { Question } from '../../models/question.model';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-quiz',
-  imports: [[NgFor], [FormsModule], [NgIf]],
+  imports: [[NgFor], [NgIf]],
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.css'
 })
@@ -22,6 +22,7 @@ export class QuizComponent implements OnInit {
   tempoRestante = 3600;
   questions: Question[] = [];
   respostasSelecionadas: { perguntaId: number, opcaoId: number }[] = [];
+  selectOptionObrigatorio: boolean = true;
 
   ngOnInit(): void {
     this.idSimulado = this.route.snapshot.params["id"]
@@ -54,8 +55,15 @@ export class QuizComponent implements OnInit {
   }
 
   proxima() {
-    if (this.currentIndex < this.questions.length - 1) {
-      this.currentIndex++;
+    if (this.opcaoSelecionadaAtual) {
+      if (this.currentIndex < this.questions.length - 1) {
+        this.currentIndex++;
+      }
+      console.log(this.selectOptionObrigatorio)
+    }
+    else {
+      console.log(this.selectOptionObrigatorio)
+      this.selectOptionObrigatorio = false;
     }
   }
 
@@ -86,21 +94,27 @@ export class QuizComponent implements OnInit {
   }
 
   finalizar() {
-    const resultadoDetalhado = this.questions.map(q => ({
-      pergunta: q.texto,
-      explicacao: q.explicacao ?? '',
-      options: q.options.map(o => ({
-        id: o.id,
-        texto: o.texto,
-        correta: o.correta,
-        selecionada: this.respostasSelecionadas.some(r => r.perguntaId === q.id && r.opcaoId === o.id)
-      }))
-    }));
+    if (this.opcaoSelecionadaAtual) {
+      const resultadoDetalhado = this.questions.map(q => ({
+        pergunta: q.texto,
+        explicacao: q.explicacao ?? '',
+        options: q.options.map(o => ({
+          id: o.id,
+          texto: o.texto,
+          correta: o.correta,
+          selecionada: this.respostasSelecionadas.some(r => r.perguntaId === q.id && r.opcaoId === o.id)
+        }))
+      }));
 
-    // Salva no localStorage
-    localStorage.setItem('resultadoDetalhado', JSON.stringify(resultadoDetalhado));
+      // Salva no localStorage
+      localStorage.setItem('resultadoDetalhado', JSON.stringify(resultadoDetalhado));
 
-    // Navega para tela de resultado
-    this.router.navigate(['/resultado']);
+      // Navega para tela de resultado
+      this.router.navigate(['/resultado']);
+    }
+    else{
+      alert(`selecione pelo menos uma opcao`)
+    }
+
   }
 }

@@ -5,7 +5,8 @@ import { Question } from '../../models/question.model';
 
 @Injectable({ providedIn: 'root' })
 export class QuizService {
-  private apiUrl = 'https://localhost:7140/api'; // sua API
+    //private apiUrl = 'https://localhost:7140/api';
+  private apiUrl = 'https://simuquestapi.onrender.com/api';
 
   constructor(private http: HttpClient) { }
 

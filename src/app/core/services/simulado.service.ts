@@ -5,7 +5,8 @@ import { SimulatedExam } from '../../models/simulado.model';
 
 @Injectable({ providedIn: 'root' })
 export class SimuladoService {
-  private apiUrl = 'https://localhost:7140/api'; // sua API
+    //private apiUrl = 'https://localhost:7140/api';
+  private apiUrl = 'https://simuquestapi.onrender.com/api';
 
   constructor(private http: HttpClient) { }
 

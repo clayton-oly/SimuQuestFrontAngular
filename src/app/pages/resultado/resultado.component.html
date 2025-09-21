@@ -3,35 +3,28 @@
 <div class="simulado-container" *ngIf="resultadoDetalhado.length">
 
   <div class="questao-container">
-  <div class="questao-card" *ngFor="let q of resultadoDetalhado; let i = index">
-    <p class="questao">Questão {{ i + 1 }}</p>
-    <p class="texto">{{ q.pergunta }}</p>
+    <div class="questao-card" *ngFor="let q of resultadoDetalhado; let i = index">
+      <p class="questao">Questão {{ i + 1 }}</p>
+      <p class="texto">{{ q.pergunta }}</p>
 
-    <div class="opcoes">
-      <label *ngFor="let o of q.options"
-             [ngClass]="{
-               'correta': o.correta,
-               'selecionada-errada': o.selecionada && !o.correta
+      <div class="opcoes">
+        <label *ngFor="let o of q.options" [ngClass]="{
+               'correta': o.correta, 'selecionada-errada': o.selecionada && !o.correta
              }">
-        <input class="radioBtn" type="radio" [checked]="o.selecionada" disabled>
-        {{ o.texto }}
-        <span *ngIf="o.selecionada">
-          {{ o.correta ? '✔️' : '❌' }}
-        </span>
-        <span *ngIf="!o.selecionada && o.correta">✔️</span>
-      </label>
-    </div>
+          <input class="radioBtn" type="radio" [checked]="o.selecionada" disabled>
+          {{ o.texto }}
+          <span *ngIf="o.selecionada">
+            {{ o.correta ? '✔️' : '❌' }}
+          </span>
+          <span *ngIf="!o.selecionada && o.correta">✔️</span>
+        </label>
+      </div>
 
-    <p class="explicacao"><strong>Explicação:</strong> {{ q.explicacao }}</p>
+      <p class="explicacao"><strong>Explicação:</strong> {{ q.explicacao }}</p>
+    </div>
   </div>
 </div>
-  
 
-
-</div>
 <div class="btn-finalizar">
   <button routerLink="/" class="btn-final">Voltar para Home</button>
-
 </div>
-
-
