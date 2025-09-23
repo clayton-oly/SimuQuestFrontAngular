@@ -9,7 +9,7 @@ import { SimulatedExam } from '../../models/simulado.model';
   selector: 'app-home',
   imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.scss'
 })
 
 export class HomeComponent {
