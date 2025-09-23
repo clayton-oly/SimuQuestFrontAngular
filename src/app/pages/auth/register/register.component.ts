@@ -13,15 +13,14 @@ export class RegisterComponent {
   login: Login = {
     email: '',
     senha: '',
-    id: 0
   };
 
   constructor(private authService: AuthService) { }
 
   register() {
-    this.authService.login(this.login).subscribe({
-      next: (res) => console.log('Cadastro realizado com sucesso', res),
-      error: (err) => console.error('Erro no cadastro', err)
+    this.authService.register(this.login).subscribe({
+      next: (res) => console.log('✅ Cadastro realizado com sucesso', res),
+      error: (err) => console.error('❌ Erro no cadastro', err)
     });
   }
 }

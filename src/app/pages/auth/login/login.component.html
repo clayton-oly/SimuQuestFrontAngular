@@ -1,12 +1,15 @@
-<form class="containerLogin">
+<form class="containerLogin" (ngSubmit)="logar()">
     <h1>Login</h1>
     <label for="">E-mail:</label>
-    <input type="email" name="email" [(ngModel)]="login.email">
+    <input type="email" name="email" autocomplete="username" [(ngModel)]="login.email">
 
     <label for="">Senha</label>
-    <input type="password" name="senha" [(ngModel)]="login.senha">
+    <input type="password" autocomplete="current-password" name="senha" [(ngModel)]="login.senha">
 
-    <label>Ainda não tem conta?<a routerLink="/login">Cadastre-se</a></label>
+<p>
+  Ainda não tem conta?
+  <a routerLink="/register">Cadastre-se</a>
+</p>
 
-    <button (click)="logar()">Logar</button>
+    <button type="submit">Logar</button>
 </form>

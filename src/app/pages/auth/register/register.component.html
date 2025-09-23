@@ -1,10 +1,10 @@
-<form class="containerLogin">
+<form class="containerLogin" (ngSubmit)="register()" #form="ngForm">
     <h1>Cadastrar</h1>
     <label for="">E-mail:</label>
-    <input type="email" name="email" [(ngModel)]="login.email">
+    <input type="email" name="email" autocomplete="username" [(ngModel)]="login.email">
 
     <label for="">Senha</label>
-    <input type="password" name="senha" [(ngModel)]="login.senha">
+    <input type="password" autocomplete="current-password" name="senha" [(ngModel)]="login.senha">
 
-    <button (click)="register()">Cadastrar</button>
+    <button type="submit">Cadastrar</button>
 </form>
