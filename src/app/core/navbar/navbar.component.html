@@ -1,7 +1,15 @@
 <header>
   <div class="logo">Simulados App</div>
   <nav>
-    <a href="#">Meus Simulados</a>
-    <a href="login">Login</a>
+
+    <ng-container *ngIf="isLoggedIn">
+      <a href="#">Meus Simulados</a>
+      <a routerLink="/perfil">Perfil</a>
+      <a (click)="logout()">Sair</a>
+    </ng-container>
+
+    <ng-container *ngIf="!isLoggedIn">
+      <a routerLink="/login">Login</a>
+    </ng-container>
   </nav>
 </header>
