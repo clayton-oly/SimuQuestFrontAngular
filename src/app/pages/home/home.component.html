@@ -1,59 +1,113 @@
 <main>
 
-  <h1>Bem-vindo(a) ao SimuQuest</h1>
 
   <div class="central">
-    <ul>
-      <li>
-        <p>Se prepare, revise e pratique com nossos materiais. Aqui </p>
-      </li>
-      <li>
-        <p>você encontra simulados, exercícios e provas para reforçar</p>
-      </li>
-      <li>
-        <p>seus estudos.</p>
-      </li>
-    </ul>
+    <div class="central-container">
+      <div class="text-img-central">
+        <div class="texts-central">
+
+          <div class="title-central">
+            <ul>
+              <li>
+                <p>Bem-vindo(a) ao SimuQuest</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="text-central">
+            <ul>
+              <li>
+                <p>Se prepare, revise e pratique com nossos materiais. Aqui você encontra simulados, exercícios e provas
+                  para reforçarseus estudos.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="img-central">
+          <img src="assets/imgs/simulado.png" alt="Simulado" width="300px">
+        </div>
+      </div>
 
 
+      <div class="tests">
 
+        <div class="title-test">
+          <ul>
+            <li>
+              <p>Escolha um Simulado</p>
+            </li>
+          </ul>
+        </div>
 
+        <div class="simulados-grid">
 
-    <img src="assets/imgs/simulado.png" alt="Simulado" width="300px">
+          <div class="simulado-card" *ngFor="let exam of simulados">
+
+            <div class="title-exam">
+              <ul>
+                <li>
+                  <p>{{ exam.nome }}</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="img-exam">
+              <img src="{{exam.imagem}}" alt="Imagem dinâmica">
+            </div>
+
+            <div class="description-exam">
+              <ul>
+                <li>
+                  <p>{{ exam.descricao }}</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="btn-exam">
+              <button  class="btn-exam-simulado" (click)="iniciar(exam.id)">Iniciar</button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <div class="intro">
+    <div class="titles">
+      <div class="titles-intro">
+        <ul>
+          <li>
+            <p class="title-intro">Olá, estudante! </p>
+          </li>
+        </ul>
+      </div>
 
-    <ul>
-      <li>
-        <p>Olá, estudante! </p>
-      </li>
-    </ul>
-
-    <ul>
-      <li>
-        <p>Estamos felizes em ter você aqui.</p>
-      </li>
-    </ul>
-
-    <ul>
-      <li>
-        <p>Esse é o seu espaço para aprender, revisar e conquistar resultados melhores.
+      <div class="sub-titles">
+        <p class="sub-title-one-intro">Estamos felizes em ter você aqui.</p>
+        <p class="sub-title-one-intro">Esse é o seu espaço para aprender, revisar e conquistar resultados melhores.
           Lembre-se: cada questão que você resolve é um passo mais perto do seu objetivo.</p>
-      </li>
-    </ul>
+      </div>
 
-    <ul>
-      <li>
-        <img src="assets/imgs/estudos.png" alt="">
-      </li>
-    </ul>
+    </div>
 
-    <ul>
-      <li>
-        <p>"A educação é a arma mais poderosa que você pode usar para mudar o mundo." – Nelson Mandela</p>
-      </li>
-    </ul>
+
+    <div class="img-intro">
+      <img src="assets/imgs/estudos.png" alt="">
+    </div>
+
+
+    <div class="frase-intro">
+      <ul>
+        <li>
+          <p>"A educação é a arma mais poderosa que você pode usar para mudar o mundo." – Nelson Mandela</p>
+        </li>
+      </ul>
+    </div>
+
 
   </div>
 
@@ -72,7 +126,8 @@
         <div class="img-card-one">
           <img src="assets/imgs/orientacao-card-one.png" alt="">
         </div>
-        <div class="text-car-one">
+
+        <div class="text-card-one">
           <ul>
             <li>
               <p class="title-one">Escolha uma prova ou simulado para começar</p>
@@ -201,14 +256,5 @@
 
 
 
-  <h1>Escolha um Simulado</h1>
 
-  <div class="simulados-grid">
-    <div class="simulado-card" *ngFor="let exam of simulados">
-      <h2>{{ exam.nome }}</h2>
-      <img src="{{exam.imagem}}" alt="Imagem dinâmica" width="150">
-      <p>{{ exam.descricao }}</p>
-      <button (click)="iniciar(exam.id)">Iniciar</button>
-    </div>
-  </div>
 </main>
