@@ -4,33 +4,67 @@
   <div class="questao-card">
 
     <!-- Timer -->
-    <div class="timer">⏰ {{ formatarTempo(tempoRestante) }}
-      <p>pergunta {{currentIndex + 1}} de {{questions.length}}</p>
+    <div class="timer-question">
+
+      <div class="question-number">
+        <ul>
+          <li>
+            <p>Pergunta {{currentIndex + 1}} de {{questions.length}}</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="timer">
+        <div class="timer-icon">
+          <span class="material-symbols-outlined">alarm</span>
+        </div>
+        <div class="time-remaining">
+          {{ formatarTempo(tempoRestante) }}
+        </div>
+
+      </div>
     </div>
 
-    <h2 class="texto">{{ currentIndex + 1 }}. {{ perguntaAtual.texto }}</h2>
+    <div class="text-question">
+      <ul>
+        <li>
+          <p>{{ currentIndex + 1 }}. {{ perguntaAtual.texto }}</p>
+        </li>
+      </ul>
+    </div>
 
     <!-- Opções -->
-    <div class="opcoes"> 
+    <div class="question-alternatives">
       <label *ngFor="let opcao of perguntaAtual.options">
-        <input type="radio"name="questao{{ currentIndex }}" [checked]="opcao.id === opcaoSelecionadaAtual"
+        <input type="radio" name="questao{{ currentIndex }}" [checked]="opcao.id === opcaoSelecionadaAtual"
           (change)="marcarOpcao(perguntaAtual.id, opcao.id)">
         {{ opcao.texto }}
       </label>
     </div>
 
-    <strong [hidden]="selectOptionObrigatorio">Selecione pelo menos uma opcao</strong>
+
+    <!-- Alerta -->
+    <div class="alerta-question-alternative">
+      <ul>
+        <li>
+          <p [hidden]="selectOptionObrigatorio">Selecione pelo menos uma opcao</p>
+        </li>
+      </ul>
+    </div>
 
     <!-- Navegação -->
-    <div id="navegacao">
-      <button class="navegacao" (click)="anterior()" [disabled]="currentIndex === 0" >Anterior</button>
-      <button  class="navegacao" (click)="proxima()" [disabled]="currentIndex === questions.length - 1" >Próxima</button>
+    <div class="navigation">
+      <button class="navigation-btn-anterior" (click)="anterior()" [disabled]="currentIndex === 0">Anterior</button>
+      <button class="navigation-btn-proxima" (click)="proxima()"
+        [disabled]="currentIndex === questions.length - 1">Próxima</button>
     </div>
 
     <!-- Botão Finalizar -->
-    <button (click)="finalizar()" class="btn-finalizar" *ngIf="currentIndex === questions.length - 1">
-      Finalizar
-    </button>
+    <div class="finish">
+      <button (click)="finalizar()" class="finish-btn-finalizar" *ngIf="currentIndex === questions.length - 1">
+        Finalizar
+      </button>
+    </div>
 
   </div>
 

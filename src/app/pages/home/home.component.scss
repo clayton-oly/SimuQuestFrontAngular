@@ -1,11 +1,13 @@
-/* home.component.css */
+/* home.component.scss */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   list-style: none;
 }
+/* final season*/
 
+/*season Root*/
 :root {
   --clr-ruby: #cf0638;
   --clr-coral: #fa6632;
@@ -17,48 +19,7 @@
   --clr-ebony: #001c26;
   --clr-onyx: #000000;
 }
-
-body {
-  font-family: Arial, sans-serif;
-  background: #f6f6f6;
-  color: #333;
-}
-
-main {
-  padding: 2rem;
-}
-
-main h1 {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-// .simulados-grid {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-//   gap: 1.5rem;
-// }
-
-.simulado-card {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-
-.simulado-card button {
-  background: #1976d2;
-  border: none;
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-
+/* final season*/
 
 /*season Intro*/
 .central {
@@ -125,11 +86,15 @@ main h1 {
 
       .simulados-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 1.5em;
 
         .simulado-card {
-
+          background: #fff;
+          padding: 1.5rem;
+          border-radius: 12px;
+          text-align: center;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
           .title-exam {
             & ul {
@@ -165,6 +130,11 @@ main h1 {
           .btn-exam {
             .btn-exam-simulado {
               background: var(--clr-navy);
+              border: none;
+              color: #fff;
+              padding: 0.6rem 1.2rem;
+              border-radius: 8px;
+              cursor: pointer;
               :hover{
                 background: var(--clr-navy);
               }
@@ -175,8 +145,8 @@ main h1 {
     }
   }
 }
-
 /* final season*/
+
 
 /*season Intro*/
 .intro {
@@ -229,8 +199,8 @@ main h1 {
     display: flex;
   }
 }
-
 /* final season*/
+
 
 /*season Guidelines*/
 .guidelines {
@@ -377,9 +347,7 @@ main h1 {
     }
   }
 }
-
 /* final season*/
-
 
 
 /*season Request*/
@@ -533,5 +501,4 @@ main h1 {
     }
   }
 }
-
 /* final season*/
