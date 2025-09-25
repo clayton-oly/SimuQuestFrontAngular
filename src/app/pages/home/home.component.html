@@ -1,37 +1,257 @@
 <main>
 
-  <h1>Bem-vindo(a) ao SimuQuest</h1>
 
   <div class="central">
-    <ul>
-      <li>
-        <p>Se prepare, revise e pratique com nossos materiais. Aqui </p>
-      </li>
-      <li>
-        <p>você encontra simulados, exercícios e provas para reforçar</p>
-      </li>
-      <li>
-        <p>seus estudos.</p>
-      </li>
-    </ul>
+    <div class="central-container">
+      <div class="text-img-central">
+        <div class="texts-central">
+
+          <div class="title-central">
+            <ul>
+              <li>
+                <p>Bem-vindo(a) ao SimuQuest</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="text-central">
+            <ul>
+              <li>
+                <p>Se prepare, revise e pratique com nossos materiais. Aqui você encontra simulados, exercícios e provas
+                  para reforçarseus estudos.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="img-central">
+          <img src="assets/imgs/simulado.png" alt="Simulado" width="300px">
+        </div>
+      </div>
 
 
+      <div class="tests">
 
+        <div class="title-test">
+          <ul>
+            <li>
+              <p>Escolha um Simulado</p>
+            </li>
+          </ul>
+        </div>
 
+        <div class="simulados-grid">
 
-    <img src="assets/imgs/simulado.png" alt="Simulado" width="300px">
-  </div>
+          <div class="simulado-card" *ngFor="let exam of simulados">
 
+            <div class="title-exam">
+              <ul>
+                <li>
+                  <p>{{ exam.nome }}</p>
+                </li>
+              </ul>
+            </div>
 
+            <div class="img-exam">
+              <img src="{{exam.imagem}}" alt="Imagem dinâmica">
+            </div>
 
-  <h1>Escolha um Simulado</h1>
+            <div class="description-exam">
+              <ul>
+                <li>
+                  <p>{{ exam.descricao }}</p>
+                </li>
+              </ul>
+            </div>
 
-  <div class="simulados-grid">
-    <div class="simulado-card" *ngFor="let exam of simulados">
-      <h2>{{ exam.nome }}</h2>
-      <img src="{{exam.imagem}}" alt="Imagem dinâmica" width="150">
-      <p>{{ exam.descricao }}</p>
-      <button (click)="iniciar(exam.id)">Iniciar</button>
+            <div class="btn-exam">
+              <button  class="btn-exam-simulado" (click)="iniciar(exam.id)">Iniciar</button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
+
+  <div class="intro">
+    <div class="titles">
+      <div class="titles-intro">
+        <ul>
+          <li>
+            <p class="title-intro">Olá, estudante! </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sub-titles">
+        <p class="sub-title-one-intro">Estamos felizes em ter você aqui.</p>
+        <p class="sub-title-one-intro">Esse é o seu espaço para aprender, revisar e conquistar resultados melhores.
+          Lembre-se: cada questão que você resolve é um passo mais perto do seu objetivo.</p>
+      </div>
+
+    </div>
+
+
+    <div class="img-intro">
+      <img src="assets/imgs/estudos.png" alt="">
+    </div>
+
+
+    <div class="frase-intro">
+      <ul>
+        <li>
+          <p>"A educação é a arma mais poderosa que você pode usar para mudar o mundo." – Nelson Mandela</p>
+        </li>
+      </ul>
+    </div>
+
+
+  </div>
+
+  <div class="guidelines">
+    <div class="title-guidelines">
+      <ul>
+        <li>
+          <p>Orientações iniciais</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cards-orientacao">
+
+      <div class="card-one">
+        <div class="img-card-one">
+          <img src="assets/imgs/orientacao-card-one.png" alt="">
+        </div>
+
+        <div class="text-card-one">
+          <ul>
+            <li>
+              <p class="title-one">Escolha uma prova ou simulado para começar</p>
+              <p class="text-one">Aqui você encontra diferentes opções de provas e simulados. Escolha aquele que faz
+                mais
+                sentido para o seu momento de estudo e comece sem pressa. O importante é dar o primeiro passo.</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="card-two">
+        <div class="img-card-two">
+          <img src="assets/imgs/orientacao-card-two.png" alt="">
+        </div>
+        <div class="text-card-two">
+          <ul>
+            <li>
+              <p class="title-two">Resolva as questões com calma e atenção</p>
+              <p class="text-two">Não tenha pressa. Leia cada enunciado com cuidado e pense bem antes de responder. O
+                estudo fica mais eficiente quando você se dedica de verdade a cada questão.</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="card-three">
+        <div class="img-card-three">
+          <img src="assets/imgs/orientacao-card-three.png" alt="">
+        </div>
+        <div class="text-card-three">
+          <ul>
+            <li>
+              <p class="title-three">Confira os gabaritos e aprenda com os erros</p>
+              <p class="text-three">Os erros fazem parte do aprendizado. Sempre confira o gabarito e aproveite para
+                entender o motivo de cada resposta. Assim, você fortalece seu conhecimento e evita repetir os mesmos
+                deslizes.</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="card-for">
+        <div class="img-card-for">
+          <img src="assets/imgs/orientacao-card-for.png" alt="">
+        </div>
+        <div class="text-card-for">
+          <ul>
+            <li>
+              <p class="title-for">Volte sempre para praticar mais</p>
+              <p class="text-for">O segredo do progresso está na prática constante. Retorne sempre que puder, faça novas
+                provas e veja sua evolução a cada tentativa. Estudar um pouco todo dia é melhor do que tentar tudo de
+                uma
+                vez.</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="btn-orientacao">
+      <button class="btn-provas">Ver provas e simulados</button>
+    </div>
+
+  </div>
+
+  <div class="request">
+
+    <div class="titles-request">
+      <ul>
+        <li>
+          <p class="title-request">Peça o seu simulado!</p>
+
+        </li>
+      </ul>
+      <div class="sub-titles">
+        <ul>
+          <li>
+            <p class="sub-title-request-one">Aqui no nosso portal, você também pode ajudar a construir o conteúdo.</p>
+            <p class="sub-title-request-two">Se tiver algum tema, prova ou tipo de exercício que gostaria de ver por
+              aqui, é
+              só fazer o seu pedido.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="information-form-request">
+      <div class="informations-request">
+        <ul>
+          <li>
+            <p class="requst-simulados">Simulados de concursos, vestibulares ou ENEM</p>
+            <p class="requst-provas">Provas de matérias específicas</p>
+            <p class="requst-questoes">Questões de revisão sobre determinado conteúdo</p>
+            <p class="requst-exercicios">Exercícios práticos para fixar melhor o aprendizado</p>
+          </li>
+        </ul>
+      </div>
+
+      <form class="form-request">
+        <input class="input-nome-request" type="text" placeholder="Nome">
+
+        <input class="input-email-request" type="email" placeholder="Email">
+        <textarea class="input-message-request" rows="5" cols="10" name="Mensagem" placeholder="Mensagem"></textarea>
+
+      </form>
+    </div>
+
+    <div class="final-texts">
+      <ul>
+        <li>
+          <p class="final-text-request">Envie sua sugestão e, sempre que possível, vamos trazer o material que você
+            precisa para estudar ainda mais focado.</p>
+          <p class="final-message-request">Bons estudos!</p>
+        </li>
+      </ul>
+    </div>
+
+
+  </div>
+
 </main>

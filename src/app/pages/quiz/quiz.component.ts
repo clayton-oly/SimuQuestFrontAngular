@@ -4,13 +4,14 @@ import { Router } from '@angular/router';
 import { QuizService } from '../../core/services/quiz.service';
 import { Question } from '../../models/question.model';
 import { ActivatedRoute } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
   selector: 'app-quiz',
-  imports: [[NgFor], [NgIf]],
+  imports: [[NgFor], [NgIf], MatIconModule],
   templateUrl: './quiz.component.html',
-  styleUrl: './quiz.component.css'
+  styleUrls: ['./quiz.component.scss']
 })
 
 export class QuizComponent implements OnInit {
