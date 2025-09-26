@@ -47,24 +47,29 @@
     <div class="alerta-question-alternative">
       <ul>
         <li>
-          <p [hidden]="selectOptionObrigatorio">Selecione pelo menos uma opcao</p>
+          <p [hidden]="selectOptionObrigatorio">Selecione ao menos uma opçõo.</p>
         </li>
       </ul>
     </div>
 
     <!-- Navegação -->
     <div class="navigation">
-      <button class="navigation-btn-anterior" (click)="anterior()" [disabled]="currentIndex === 0">Anterior</button>
-      <button class="navigation-btn-proxima" (click)="proxima()"
-        [disabled]="currentIndex === questions.length - 1">Próxima</button>
+      <!-- Botão Finalizar -->
+      <div class="finish"> <button (click)="finalizar()" class="finish-btn-finalizar"
+          *ngIf="currentIndex === questions.length - 1">Finalizar</button>
+      </div>
+      <div class="prox-ant"><button class="navigation-btn-anterior" (click)="anterior()"
+          [disabled]="currentIndex === 0">Anterior</button>
+        <button class="navigation-btn-proxima" (click)="proxima()"
+          [disabled]="currentIndex === questions.length - 1">Próxima</button>
+      </div>
+
+
+
     </div>
 
-    <!-- Botão Finalizar -->
-    <div class="finish">
-      <button (click)="finalizar()" class="finish-btn-finalizar" *ngIf="currentIndex === questions.length - 1">
-        Finalizar
-      </button>
-    </div>
+
+
 
   </div>
 

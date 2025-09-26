@@ -5,6 +5,7 @@
   box-sizing: border-box;
   list-style: none;
 }
+
 /* final season*/
 
 /*season Root*/
@@ -19,6 +20,7 @@
   --clr-ebony: #001c26;
   --clr-onyx: #000000;
 }
+
 /* final season*/
 
 /*season Intro*/
@@ -90,6 +92,9 @@
         gap: 1.5em;
 
         .simulado-card {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
           background: #fff;
           padding: 1.5rem;
           border-radius: 12px;
@@ -109,14 +114,16 @@
           }
 
           .img-exam {
-              padding: .5em;
+            padding: .5em;
+
             & img {
               width: 8em;
-
             }
           }
 
           .description-exam {
+            margin-top: auto;
+
             & ul {
               & li {
                 & p {
@@ -128,23 +135,34 @@
           }
 
           .btn-exam {
+            margin-top: 0.5rem;
+
             .btn-exam-simulado {
               background: var(--clr-navy);
               border: none;
               color: #fff;
               padding: 0.6rem 1.2rem;
-              border-radius: 8px;
+              border-radius: 0.4em;
               cursor: pointer;
-              :hover{
-                background: var(--clr-navy);
+              transition: background 0.3s ease, color 0.3s ease, transform 0.1s ease;
+              transform: translateZ(0);
+
+
+              &:hover {
+                background: var(--clr-jade-one);
+                color: var(--clr-ebony);
+                transform: scale(1.05);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
               }
             }
           }
         }
       }
+
     }
   }
 }
+
 /* final season*/
 
 
@@ -180,9 +198,16 @@
     }
 
     .sub-titles {
-      .sub-title-one-intro {}
 
-      .sub-title-two-intro {}
+      & ul {
+        & li {
+          .sub-title-one-intro {}
+
+          .sub-title-two-intro {
+            max-width: 800px;
+          }
+        }
+      }
     }
   }
 
@@ -199,6 +224,7 @@
     display: flex;
   }
 }
+
 /* final season*/
 
 
@@ -347,6 +373,7 @@
     }
   }
 }
+
 /* final season*/
 
 
@@ -457,7 +484,7 @@
         padding: 1em;
         border-radius: 0.5em;
         border-width: 0.1em;
-        border-style: dashed;
+        border-style: solid;
         border-color: var(--clr-navy);
         width: 400px;
       }
@@ -467,7 +494,7 @@
         padding: 1em;
         border-radius: 0.5em;
         border-width: 0.1em;
-        border-style: dashed;
+        border-style: solid;
         border-color: var(--clr-navy);
       }
 
@@ -476,10 +503,36 @@
         padding: 1em;
         border-radius: 0.5em;
         border-width: 0.1em;
-        border-style: dashed;
+        border-style: solid;
         border-color: var(--clr-navy);
         // overflow: hidden;
         resize: none;
+
+      }
+
+      .btn-form-request {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        .btn-request{
+          background: var(--clr-navy);
+          border: none;
+          color: #fff;
+          padding: 0.6rem 3rem;
+          border-radius: 0.4em;
+          cursor: pointer;
+          transition: background 0.3s ease, color 0.3s ease, transform 0.1s ease;
+          transform: translateZ(0);
+
+
+          &:hover {
+            background: var(--clr-jade-one);
+            color: var(--clr-ebony);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          }
+        }
+
       }
     }
 
@@ -501,4 +554,5 @@
     }
   }
 }
+
 /* final season*/

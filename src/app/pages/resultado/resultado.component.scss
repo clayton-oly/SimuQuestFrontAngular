@@ -118,6 +118,10 @@
         color: var(--clr-ebony);
         font-size: 1rem;
         max-width: 60em;
+
+        & strong{
+          color: var(--clr-jade);
+        }
       }
     }
   }
@@ -136,6 +140,17 @@
     margin: 2em;
     padding: 1em;
     border: none;
+    border-radius: 0.4em;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.1s ease;
+    transform: translateZ(0);
+  
+    &:hover {
+      background: var(--clr-jade);
+      color: var(--clr-snow);
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
   }
 
 }
