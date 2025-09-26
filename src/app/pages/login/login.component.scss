@@ -1,0 +1,129 @@
+:root {
+  --clr-ruby: #cf0638;
+  --clr-coral: #fa6632;
+  --clr-sun: #fecd23;
+  --clr-jade: #0a996f;
+  --clr-navy: #0a6789;
+  --clr-snow: #ffffff;
+  --clr-smoke: #475d65;
+  --clr-ebony: #001c26;
+  --clr-onyx: #000000;
+  --clr-navy-one: #0a688a50;
+  --clr-jade-one: #0a996f80;
+}
+
+.login-backgroung {
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    var(--clr-navy),
+    var(--clr-navy),
+    var(--clr-navy-one),
+    var(--clr-navy)
+  );
+
+  display: flex;
+  justify-content: space-evenly;
+align-items: center;
+  .left-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    gap: 2em;
+    max-width: 600px;
+    .title-text {
+      font-weight: bold;
+      font-size: 2em;
+    }
+
+    & ul {
+      & li {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        & p {
+          color: var(--clr-snow);
+        }
+
+        // .text-exemp {
+        //   display: flex;
+        //   flex-direction: column;
+        //   gap: 0.5em;
+        //   .text-exemp-title {
+        //     font-weight: bold;
+        //   }
+        // }
+      }
+    }
+  }
+  .containerLogin {
+    background: var(--clr-snow-one);
+    padding: 3em 3em;
+    border-radius: 0.8em;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    min-width: 600px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: 400px;
+
+    .title-login {
+      & ul {
+        & li {
+          & p {
+            color: var(--clr-navy);
+            font-weight: bold;
+            font-size: 2em;
+          }
+        }
+      }
+    }
+
+    .email-password-login {
+      margin-top: 1em;
+      label {
+        display: block;
+        text-align: left;
+        margin-bottom: 0.5em;
+        color: var(--clr-navy);
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid var(--clr-smoke-one);
+        border-radius: 8px;
+        font-size: 14px;
+
+        &:focus {
+          border-color: var(--clr-navy);
+          outline: none;
+        }
+      }
+    }
+
+    .btn-login {
+      button {
+        width: 30%;
+        padding: 10px;
+        background: var(--clr-navy);
+        color: var(--clr-snow);
+        font-size: 1em;
+        font-weight: bold;
+        border: none;
+        border-radius: 0.5em;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: var(--clr-navy-one);
+          color: var(--clr-navy);
+        }
+      }
+    }
+  }
+}
