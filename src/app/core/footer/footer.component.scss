@@ -1,0 +1,52 @@
+:root {
+  --clr-ruby: #cf0638;
+  --clr-coral: #fa6632;
+  --clr-sun: #fecd23;
+  --clr-jade: #0a996f;
+
+  --clr-navy: #0a6789;
+  --clr-snow: #ffffff;
+  --clr-smoke: #475d65;
+  --clr-ebony: #001c26;
+  --clr-onyx: #000000;
+  --clr-navy-one: #0a688a50;
+  --clr-jade-one: #0a996f80;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.8em;
+  background-color: var(--clr-navy);
+  color: var(--clr-snow);
+
+  .simuQuest-footer {
+    p {
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+
+  .social-media {
+    display: flex;
+    gap: 1em;
+
+    a {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+      transform: translateZ(0);
+      .icon img {
+        width: 2em;
+        height: 2em;
+        transition: inherit;
+      }
+
+      &:hover {
+        transform: scale(1.08);
+      }
+    }
+  }
+}

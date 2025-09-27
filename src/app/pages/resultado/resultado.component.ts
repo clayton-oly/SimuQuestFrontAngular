@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-resultado',
   imports: [NgFor, NgIf, NgClass, RouterModule ],
   templateUrl: './resultado.component.html',
-  styleUrl: './resultado.component.css'
+  styleUrl: './resultado.component.scss'
 })
 
 export class ResultadoComponent implements OnInit {
