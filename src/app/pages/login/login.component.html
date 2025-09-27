@@ -1,0 +1,50 @@
+<div class="login-backgroung">
+  <div class="left-text">
+    <div class="title-text">
+      <ul>
+        <li>
+          <p>Bem-vindx ao SimuQuest!</p>
+        </li>
+      </ul>
+    </div>
+    <ul>
+      <li>
+        <p class="text">
+          Prepare-se para provas e simulados de forma rápida e eficiente. Nosso
+          sistema oferece conteúdo atualizado e exercícios práticos para você se
+          destacar nos estudos.
+        </p>
+        <!-- <div class="text-exemp">
+          <p class="text-exemp-title">Com o SimuQuest você pode:</p>
+          <p>Realizar simulados personalizados</p>
+          <p>Acompanhar seu desempenho e evolução</p>
+          <p>Estudar com questões de provas anteriores</p>
+          <p>Entre agora e descubra uma forma inteligente de estudar!</p>
+        </div> -->
+      </li>
+    </ul>
+  </div>
+
+  <div class="containerLogin">
+    <div class="title-login">
+      <ul>
+        <li>
+          <p>Login</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="email-password-login">
+      <label for="email">E-mail:</label>
+      <input type="email" name="email" [(ngModel)]="login.email" />
+
+      <label for="senha">Senha:</label>
+      <input type="password" name="senha" [(ngModel)]="login.senha" />
+    </div>
+
+    <div class="btn-login">
+      <button (click)="logar()">Entrar</button>
+    </div>
+    
+  </div>
+</div>

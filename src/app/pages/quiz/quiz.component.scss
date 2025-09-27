@@ -15,6 +15,7 @@
   --clr-sun: #fecd23;
   --clr-jade: #0a996f;
   --clr-navy: #0a6789;
+  --clr-navy-one: #0a688a50;
   --clr-snow: #ffffff;
   --clr-smoke: #475d65;
   --clr-ebony: #001c26;
@@ -28,29 +29,36 @@
 
 
   padding: 20px;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  .questao-card {width: 700px;
- height:auto;
+
+  .questao-card {
+    width: 700px;
+    height: auto;
     border-radius: 0.5em;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 1.25em;
     margin-bottom: 1.25em;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 2em;
 
     .timer-question {
       display: flex;
       justify-content: space-between;
+      background: var(--clr-navy);
+      padding: 0.5em;
+      border-radius: 0.2em;
+      align-items: center;
 
       .question-number {
         & ul {
           & li {
             & p {
-              color: var(--clr-smoke);
+              color: var(--clr-snow);
+              font-weight: bold;
             }
           }
         }
@@ -60,17 +68,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 0.5em;
 
         .timer-icon {
           .material-symbols-outlined {
             font-size: 1.25em;
             font-weight: 600;
-            color: var(--clr-jade);
+            color: var(--clr-snow);
           }
         }
 
         .time-remaining {
-          color: var(--clr-navy);
+          color: var(--clr-snow);
         }
       }
     }
@@ -79,6 +88,7 @@
       & ul {
         & li {
           & p {
+            font-weight: bold;
             color: var(--clr-ebony);
           }
         }
@@ -90,31 +100,96 @@
       flex-direction: column;
       gap: 1em;
       color: var(--clr-ebony);
+
+      input[type="radio"] {
+        accent-color: var(--clr-jade);
+        cursor: pointer;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+      }
     }
 
-    .alerta-question-alternative {}
+    .alerta-question-alternative {
+      & ul {
+        & li {
+          & p {
+            color: var(--clr-ruby);
+          }
+        }
+      }
+    }
 
     .navigation {
       display: flex;
-      justify-content: end;
-      gap: 1em;
-      .navigation-btn-anterior {
-        border: none;
-        background: var(--clr-navy);
-        color: var(--clr-snow);
-        padding: 0.7em;
-        border-radius: 0.4em;
+      justify-content: space-between;
+
+      .finish {
+        .finish-btn-finalizar {
+          background: var(--clr-navy);
+          border: none;
+          color: #fff;
+          padding: 0.6rem 1.2rem;
+          border-radius: 0.4em;
+          cursor: pointer;
+          transition: background 0.3s ease, color 0.3s ease, transform 0.1s ease;
+          transform: translateZ(0);
+
+
+          &:hover {
+            background: var(--clr-jade-one);
+            color: var(--clr-ebony);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          }
+        }
       }
 
-      .navigation-btn-proxima {
-        border: none;
-        background: var(--clr-navy);
-        color: var(--clr-snow);
-        padding: 0.7em;
-        border-radius: 0.4em;
+      .prox-ant {
+        display: flex;
+        gap: 1em;
+
+        .navigation-btn-anterior {
+          border: none;
+          background: var(--clr-navy);
+          color: var(--clr-snow);
+          padding: 0.8em 1.5em;
+          border-radius: 0.4em;
+          cursor: pointer;
+          transition: background 0.3s ease, color 0.3s ease, transform 0.1s ease;
+          transform: translateZ(0);
+
+          &:hover {
+            background: var(--clr-jade);
+            color: var(--clr-snow);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          }
+        }
+
+        .navigation-btn-proxima {
+          border: none;
+          background: var(--clr-navy);
+          color: var(--clr-snow);
+          padding: 0.8em 1.5em;
+          border-radius: 0.4em;
+          cursor: pointer;
+          transition: background 0.3s ease, color 0.3s ease, transform 0.1s ease;
+          transform: translateZ(0);
+
+          &:hover {
+            background: var(--clr-jade);
+            color: var(--clr-snow);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          }
+
+        }
       }
     }
-
-    .finish {}
   }
 }

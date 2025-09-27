@@ -65,12 +65,13 @@
             </div>
 
             <div class="btn-exam">
-              <button  class="btn-exam-simulado" (click)="iniciar(exam.id)">Iniciar</button>
+              <button class="btn-exam-simulado" (click)="iniciar(exam.id)">Iniciar</button>
             </div>
 
           </div>
 
         </div>
+
       </div>
 
     </div>
@@ -87,9 +88,14 @@
       </div>
 
       <div class="sub-titles">
-        <p class="sub-title-one-intro">Estamos felizes em ter você aqui.</p>
-        <p class="sub-title-one-intro">Esse é o seu espaço para aprender, revisar e conquistar resultados melhores.
-          Lembre-se: cada questão que você resolve é um passo mais perto do seu objetivo.</p>
+        <ul>
+          <li>
+            <p class="sub-title-one-intro">Estamos felizes em ter você aqui.</p>
+            <p class="sub-title-two-intro">Esse é o seu espaço para aprender, revisar e conquistar resultados melhores.
+              Lembre-se: cada questão que você resolve é um passo mais perto do seu objetivo.</p>
+          </li>
+        </ul>
+
       </div>
 
     </div>
@@ -236,9 +242,13 @@
         <input class="input-nome-request" type="text" placeholder="Nome">
 
         <input class="input-email-request" type="email" placeholder="Email">
-        <textarea class="input-message-request" rows="5" cols="10" name="Mensagem" placeholder="Mensagem"></textarea>
 
+        <textarea class="input-message-request" rows="5" cols="10" name="Mensagem" placeholder="Mensagem"></textarea>
+        <div class="btn-form-request">
+          <button class="btn-request">Enviar</button>
+        </div>
       </form>
+
     </div>
 
     <div class="final-texts">
@@ -253,5 +263,6 @@
 
 
   </div>
-
+   
+ 
 </main>
