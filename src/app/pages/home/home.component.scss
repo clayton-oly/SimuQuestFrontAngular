@@ -23,6 +23,18 @@
 
 /* final season*/
 
+/*season Main*/
+main {
+  background: linear-gradient(
+    to top,
+    var(--clr-navy-one),
+    var(--clr-jade-one),
+    var(--clr-navy-one),
+  );
+}
+
+/* final season*/
+
 /*season Intro*/
 .central {
   display: flex;
@@ -187,6 +199,7 @@
           display: flex;
           flex-direction: column;
           gap: 1em;
+          color: var(--clr-ebony);
 
           .title-intro {
             color: var(--clr-ebony);
@@ -201,10 +214,13 @@
 
       & ul {
         & li {
-          .sub-title-one-intro {}
+          .sub-title-one-intro {
+            color: var(--clr-ebony);
+          }
 
           .sub-title-two-intro {
             max-width: 800px;
+            color: var(--clr-ebony);
           }
         }
       }
@@ -222,6 +238,7 @@
 
   .frase-intro {
     display: flex;
+    color: var(--clr-ebony);
   }
 }
 
@@ -266,10 +283,10 @@
             display: flex;
             flex-direction: column;
             gap: 1em;
+            color: var(--clr-ebony);
 
             .title-one {
               font-weight: bold;
-
             }
 
             .text-one {
@@ -293,6 +310,7 @@
             display: flex;
             flex-direction: column;
             gap: 1em;
+            color: var(--clr-ebony);
 
             .title-two {
               font-weight: bold;
@@ -320,6 +338,7 @@
             display: flex;
             flex-direction: column;
             gap: 1em;
+            color: var(--clr-ebony);
 
             .title-three {
               font-weight: bold;
@@ -347,6 +366,7 @@
             display: flex;
             flex-direction: column;
             gap: 1em;
+            color: var(--clr-ebony);
 
             .title-for {
               font-weight: bold;
@@ -505,7 +525,6 @@
         border-width: 0.1em;
         border-style: solid;
         border-color: var(--clr-navy);
-        // overflow: hidden;
         resize: none;
 
       }
@@ -514,7 +533,8 @@
         display: flex;
         align-items: center;
         justify-content: end;
-        .btn-request{
+
+        .btn-request {
           background: var(--clr-navy);
           border: none;
           color: #fff;
@@ -546,6 +566,7 @@
         align-items: center;
         text-align: center;
         gap: 1em;
+        color: var(--clr-ebony);
 
         .final-text-request {}
 
@@ -556,3 +577,5 @@
 }
 
 /* final season*/
+
+
