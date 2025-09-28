@@ -13,7 +13,7 @@
 }
 
 .login-backgroung {
-  height:100vh;
+  height: 100vh;
   background: linear-gradient(
     to right,
     var(--clr-navy),
@@ -22,9 +22,9 @@
     var(--clr-navy)
   );
 
-  display: flex; 
+  display: flex;
   justify-content: space-evenly;
-align-items: center;
+  align-items: center;
   .left-text {
     display: flex;
     flex-direction: column;
@@ -107,6 +107,7 @@ align-items: center;
     }
 
     .btn-login {
+      margin-top: 2em;
       button {
         width: 30%;
         padding: 10px;

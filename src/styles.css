@@ -3,25 +3,30 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
-:root{
-  --clr-ruby:#cf0638;
-  --clr-coral:#fa6632;
-  --clr-sun:#fecd23;
-  --clr-jade:#0a996f;
-  
-  --clr-navy:#0a6789;
-  --clr-snow:#ffffff;
-  --clr-snow-one:#ffffff95;
-  --clr-smoke:#475d65;
-  --clr-smoke-one:#475d6580;
-  --clr-ebony:#001c26;
-  --clr-onyx:#000000;
+:root {
+  --clr-ruby: #cf0638;
+  --clr-coral: #fa6632;
+  --clr-sun: #fecd23;
+  --clr-jade: #0a996f;
+  --clr-navy: #0a6789;
+  --clr-snow: #ffffff;
+  --clr-smoke: #475d65;
+  --clr-ebony: #001c26;
+  --clr-onyx: #000000;
   --clr-navy-one: #0a688a50;
-  --clr-jade-one:#0a996f80;
+  --clr-navy-two: #0a688a80;
+  --clr-jade-one: #0a996f80;
+  --clr-jade-two: #0a996f50;
+  --clr-snow-one: #ffffff95;
+  --clr-snow-two: #ffffff60;
+  --clr-smoke-one: #475d6580;
 }
 
 /* html, body { height: 100%; } */
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
